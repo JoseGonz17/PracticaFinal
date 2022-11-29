@@ -8,16 +8,24 @@ public class DuckMovement : MonoBehaviour
     public Transform[] standByPosition;
     public Transform[] endPosition;
 
-    public GameObject duckFirstMove;
-    private float duckStandByPosition;
-    private float duckStartPosition;
+    public GameObject duckPrefab;
+
+    private float timeToSpawn = 1f;
+    private float timeSinceLastSpawn;
 
     private void Start()
     {
     }
 
-    public void RespawnRandomPosition()
+    private void Update()
     {
-        duckFirstMove.transform.position = new Vector3(0, Random.Range(duckStartPosition, duckStandByPosition), 0);
+        timeSinceLastSpawn += Time.deltaTime;
+        if (timeSinceLastSpawn > timeToSpawn)
+        {
+            timeSinceLastSpawn = 0;
+            int rand = Random.Range(0, startPosition.Length);
+            Transform randonPos = startPosition[rand];
+            Instantiate(duckPrefab, randonPos.position, Quaternion.identity);
+        }
     }
 }
