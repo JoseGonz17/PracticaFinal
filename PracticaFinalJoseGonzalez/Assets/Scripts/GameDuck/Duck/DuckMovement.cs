@@ -5,8 +5,8 @@ using UnityEngine;
 public class DuckMovement : MonoBehaviour
 {
     public Transform[] startPosition;
-    public Transform[] standByPosition;
-    public Transform[] endPosition;
+
+    //public Transform[] endPosition;
 
     public GameObject duckPrefab;
 
