@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageMaker : MonoBehaviour
+public class DamageMaker : PlayerTrigger
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int damageAmount = 1;
 
-    // Update is called once per frame
-    void Update()
+    public override void OnPlayerEnter2D(GameObject playerObject)
     {
-        
+        Health health = GetComponent<Health>();
+        health.TakeDamage(damageAmount);
     }
 }

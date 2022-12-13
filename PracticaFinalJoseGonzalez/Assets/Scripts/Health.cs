@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -12,18 +13,24 @@ public class Health : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        health.fillAmount = Mathf.InverseLerp(0, maxHealth, currentHealth);
+        HealthImage();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void TakeDamage(int damageTaken)
     {
         if (currentHealth <= 0)
         {
-            currentHealth = maxHealth;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else
         {
-            currentHealth -= 1;
+            Debug.Log("me han echo daño, salud restante " + currentHealth);
         }
+        HealthImage();
+    }
+
+    public void HealthImage()
+    {
+        health.fillAmount = Mathf.InverseLerp(0, maxHealth, currentHealth);
     }
 }

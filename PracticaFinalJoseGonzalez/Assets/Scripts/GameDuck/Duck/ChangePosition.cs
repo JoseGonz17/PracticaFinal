@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangePosition : MonoBehaviour
 {
-    public float speed = 100000000;
+    public float speed = 7;
 
     public Transform standbyPosition;
 
@@ -14,6 +14,6 @@ public class ChangePosition : MonoBehaviour
         float change = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, standbyPosition.transform.position, change);
 
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 4);
     }
 }

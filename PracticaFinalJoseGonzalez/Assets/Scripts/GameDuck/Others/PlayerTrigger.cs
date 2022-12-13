@@ -6,47 +6,15 @@ public class PlayerTrigger : MonoBehaviour
 {
     private string playerTag = "Player";
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnPlayerEnter2D(GameObject playerObject)
+    {
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag(playerTag))
         {
-            OnPlayerEnter(other.gameObject);
+            OnPlayerEnter2D(other.gameObject);
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag(playerTag))
-        {
-            OnPlayerExit(other.gameObject);
-        }
-    }
-
-    public virtual void OnPlayerExit(GameObject playerObject)
-    {
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag(playerTag))
-        {
-            OnPlayerStay(other.gameObject);
-        }
-    }
-
-    public virtual void OnPlayerStay(GameObject playerObject)
-    {
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag(playerTag))
-        {
-            OnPlayerEnter(collision.gameObject);
-        }
-    }
-
-    public virtual void OnPlayerEnter(GameObject playerObject)
-    {
     }
 }

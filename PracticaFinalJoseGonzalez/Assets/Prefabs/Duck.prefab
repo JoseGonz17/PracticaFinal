@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 8603569839717620755}
   - component: {fileID: 3990218609311809163}
   - component: {fileID: 3065328457668615916}
+  - component: {fileID: 7639100325505957482}
+  - component: {fileID: 7083174255839626234}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,6 +140,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   standbyPosition: {fileID: 6182204151512624462}
+--- !u!114 &7639100325505957482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90681546996030176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02a1a9deb05bfbb49aa6fb4442d921be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 1
+--- !u!114 &7083174255839626234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90681546996030176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641e7ab60fa272943be6952fc8f7eced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentNumberOfPoints: 0
+  pointsPerDuck: 1
 --- !u!1 &1600394622386154502
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +208,7 @@ GameObject:
   - component: {fileID: 922244439902857118}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: Duck
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
