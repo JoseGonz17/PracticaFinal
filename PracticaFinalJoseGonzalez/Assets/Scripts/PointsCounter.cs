@@ -6,16 +6,15 @@ using UnityEngine.UI;
 public class PointsCounter : MonoBehaviour
 {
     public Text pointsText;
-    public float currentNumberOfPoints = 0;
+    public float point;
 
-    public void GetPoint(int pointAmount)
+    public void GetPoint()
     {
-        currentNumberOfPoints += pointAmount;
+        point += 1;
+    }
 
-        if (pointsText != null)
-        {
-            pointsText.text = currentNumberOfPoints.ToString();
-        }
-        Debug.Log("he recogido una moneda, tengo: " + currentNumberOfPoints + "monedas");
+    private void Update()
+    {
+        pointsText.text = point.ToString();
     }
 }

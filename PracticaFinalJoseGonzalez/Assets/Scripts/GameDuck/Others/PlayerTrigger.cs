@@ -6,15 +6,15 @@ public class PlayerTrigger : MonoBehaviour
 {
     private string playerTag = "Player";
 
-    public virtual void OnPlayerEnter2D(GameObject playerObject)
+    public virtual void OnPlayerCollision2D(GameObject playerObject)
     {
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerCollision2D(Collider2D other)
     {
         if (other.gameObject.CompareTag(playerTag))
         {
-            OnPlayerEnter2D(other.gameObject);
+            OnPlayerCollision2D(other.gameObject);
         }
     }
 }

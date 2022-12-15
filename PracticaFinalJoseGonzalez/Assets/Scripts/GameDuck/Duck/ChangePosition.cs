@@ -13,7 +13,5 @@ public class ChangePosition : MonoBehaviour
     {
         float change = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, standbyPosition.transform.position, change);
-
-        Destroy(gameObject, 4);
     }
 }

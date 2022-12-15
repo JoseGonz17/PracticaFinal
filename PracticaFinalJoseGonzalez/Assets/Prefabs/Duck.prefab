@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 7779097849611221138}
   - component: {fileID: 5734727367773646240}
   - component: {fileID: 8603569839717620755}
-  - component: {fileID: 3990218609311809163}
   - component: {fileID: 3065328457668615916}
-  - component: {fileID: 7639100325505957482}
-  - component: {fileID: 7083174255839626234}
+  - component: {fileID: 1498776690}
+  - component: {fileID: 1378410511920439814}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: Player
+  m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90681546996030176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 9.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 922244439902857118}
@@ -113,19 +112,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3990218609311809163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90681546996030176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111f10e19c8c37243afa765ddb8516e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 1
 --- !u!114 &3065328457668615916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   standbyPosition: {fileID: 6182204151512624462}
---- !u!114 &7639100325505957482
+--- !u!114 &1498776690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,11 +135,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 90681546996030176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02a1a9deb05bfbb49aa6fb4442d921be, type: 3}
+  m_Script: {fileID: 11500000, guid: e62bfc5499eda0147b4a7768008c457d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 1
---- !u!114 &7083174255839626234
+  DoorAnimator: {fileID: 1855304416}
+--- !u!114 &1378410511920439814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,11 +148,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 90681546996030176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 641e7ab60fa272943be6952fc8f7eced, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ff6c4127d652ab42b94a34696e3c88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentNumberOfPoints: 0
-  pointsPerDuck: 1
 --- !u!1 &1600394622386154502
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +190,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 922244439902857118}
+  - component: {fileID: 1855304416}
+  - component: {fileID: 4115925481636950831}
   m_Layer: 0
   m_Name: Duck
   m_TagString: Untagged
@@ -229,3 +215,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1855304416
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267162770520373780}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03f3768b9bc8c2041b52c1ec8bac52fc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4115925481636950831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8267162770520373780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90b9aaaf107015a4aa27a98b2130358f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
