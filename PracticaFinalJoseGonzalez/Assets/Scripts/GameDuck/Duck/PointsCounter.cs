@@ -8,13 +8,14 @@ public class PointsCounter : MonoBehaviour
     public Text pointsText;
     public float point;
 
+    private void Update()
+    {
+        //pointsText.text = point.ToString();
+    }
     public void GetPoint()
     {
         point += 1;
     }
 
-    private void Update()
-    {
-        pointsText.text = point.ToString();
-    }
+
 }

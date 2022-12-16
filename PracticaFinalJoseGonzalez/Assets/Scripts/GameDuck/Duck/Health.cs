@@ -4,20 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Health : MonoBehaviour
+public class Health : PlayerTrigger
 {
-    public Image health;
-    public float currentHealth = 0;
+    public Image healthBar;
+
+    public float currentHealth;
     public float maxHealth = 5;
 
-    private void Start()
+    private void Update()
     {
-        currentHealth = maxHealth;
-        HealthImage();
+        healthBar.fillAmount = currentHealth / maxHealth;
     }
-
-    public void TakeDamage(int damageTaken)
+    public void TakeDamage(int damageTaken) 
     {
+        currentHealth -= damageTaken;
+
         if (currentHealth <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -26,11 +27,6 @@ public class Health : MonoBehaviour
         {
             Debug.Log("me han echo daño, salud restante " + currentHealth);
         }
-        HealthImage();
     }
 
-    public void HealthImage()
-    {
-        health.fillAmount = Mathf.InverseLerp(0, maxHealth, currentHealth);
-    }
 }

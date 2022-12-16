@@ -6,9 +6,9 @@ public class DamageMaker : PlayerTrigger
 {
     public int damageAmount = 1;
 
-    public override void OnPlayerCollision2D(GameObject playerObject)
+    public override void OnPlayerEnter(GameObject playerObject)
     {
-        Health health = GetComponent<Health>();
+        Health health = playerObject.GetComponent<Health>();
         health.TakeDamage(damageAmount);
     }
 }

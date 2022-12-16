@@ -9,7 +9,7 @@ public class Point : MonoBehaviour
         if (other.gameObject.tag == "Duck")
         {
             other.gameObject.GetComponent<PointsCounter>().GetPoint();
-            Destroy(gameObject, 4);
+            Destroy(gameObject);
         }
     }
 }
