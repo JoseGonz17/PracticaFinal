@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8603569839717620755}
   - component: {fileID: 3065328457668615916}
   - component: {fileID: 1498776690}
-  - component: {fileID: 1629037942}
+  - component: {fileID: 1330284821}
   m_Layer: 0
   m_Name: Duck
   m_TagString: Untagged
@@ -96,7 +96,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoorAnimator: {fileID: 1855304416}
---- !u!114 &1629037942
+--- !u!114 &1330284821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 0}
-  point: 0
+  point: 1
+  pointsCurrents: 0
 --- !u!1 &1600394622386154502
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +197,7 @@ GameObject:
   - component: {fileID: 4115925481636950831}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: Untagged
+  m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
