@@ -13,10 +13,6 @@ public class DuckMovement : MonoBehaviour
     private float timeToSpawn = 1f;
     private float timeSinceLastSpawn;
 
-    private void Start()
-    {
-    }
-
     private void Update()
     {
         timeSinceLastSpawn += Time.deltaTime;

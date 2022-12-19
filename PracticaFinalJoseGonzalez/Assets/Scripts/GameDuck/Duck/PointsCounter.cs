@@ -20,21 +20,11 @@ public class PointsCounter : MonoBehaviour
         pointsCurrents = point;
     }
 
-    private void Update()
+    public void OnMouseDown()
     {
         if (gameObject.CompareTag("Duck") && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            pointsText.text = pointsCurrents.ToString();
-            pointsCurrents += point;
-        }
-    }
-
-    private void OnMouseDown()
-    {
-        if (gameObject.CompareTag("Duck") && Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            pointsText.text = pointsCurrents.ToString();
-            pointsCurrents += point;
+            PointManager.instance.Addpoints(1);
         }
     }
 }

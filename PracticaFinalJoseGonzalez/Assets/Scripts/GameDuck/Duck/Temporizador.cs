@@ -13,9 +13,9 @@ public class Temporizador : MonoBehaviour
 
     private bool timeIsTicking = false;
 
-    private int numberOfClicks = 0;
-    public int targetNumberOfClick = 10;
-    public Text numberOfClicksText;
+    private int numberOfDuck = 0;
+    public int targetNumberOfDuck = 10;
+    public Text numberOfDuckText;
     public Text gameOverText;
 
     private string maxScoreKey = "maxScore";
@@ -26,14 +26,14 @@ public class Temporizador : MonoBehaviour
 
     public void Click()
     {
-        numberOfClicks++;
-        numberOfClicksText.text = numberOfClicks.ToString();
+        numberOfDuck++;
+        numberOfDuckText.text = numberOfDuck.ToString();
     }
 
     public void Restart()
     {
-        numberOfClicks = 0;
-        numberOfClicksText.text = numberOfClicks.ToString();
+        numberOfDuck = 0;
+        numberOfDuckText.text = numberOfDuck.ToString();
     }
 
     public void StartCountDown()
@@ -66,26 +66,26 @@ public class Temporizador : MonoBehaviour
 
     private void CheckWinningConditions()
     {
-        if (numberOfClicks >= targetNumberOfClick)
+        if (PointManager.instance.currentPoints >= targetNumberOfDuck)
         {
             int maxScore = PlayerPrefs.GetInt(maxScoreKey);
 
-            if (numberOfClicks > maxScore)
+            if (numberOfDuck > maxScore)
             {
-                gameOverText.text = "felicidades has clickado " + numberOfClicks +
-                    " de los " + targetNumberOfClick + " has alcanzado un nuevo record";
+                gameOverText.text = "felicidades has derribado " + numberOfDuck +
+                    " de los " + targetNumberOfDuck + " has alcanzado un nuevo record";
 
-                PlayerPrefs.SetInt(maxScoreKey, numberOfClicks);
+                PlayerPrefs.SetInt(maxScoreKey, numberOfDuck);
             }
             else
             {
-                gameOverText.text = "felicidades has clickado " + numberOfClicks +
-                    " de los " + targetNumberOfClick + " necesarios,  el record son " + maxScore;
+                gameOverText.text = "felicidades has derribado a " + numberOfDuck +
+                    " de los " + targetNumberOfDuck + " necesarios,  el record son " + maxScore;
             }
         }
         else
         {
-            gameOverText.text = "lo siento pero no lo has conseguido";
+            gameOverText.text = "No has llegado a numero de patos derribados necesarios :( " + targetNumberOfDuck;
         }
     }
 }
